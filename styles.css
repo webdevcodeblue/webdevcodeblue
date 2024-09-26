@@ -1,0 +1,948 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
+section {
+  scroll-margin-top: 160px; /* Prilagodi ovu vrijednost visini tvog navbar-a */
+  padding-top: 10px; /* Daje razmak između sekcije i navbar-a */
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #263545; /* Tamnoplava nijansa za moderan izgled */
+  padding: 40px 30px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Dodan efekt sjene za dubinu */
+  transition: background-color 0.3s ease-in-out;
+  position: fixed; /* Navbar je sada fiksiran na vrhu stranice */
+  top: 0; /* Postavljen na vrh */
+  left: 0; /* Postavljen na lijevu stranu */
+  width: 100%; /* Proteže se cijelom širinom stranice */
+  z-index: 1000; /* Z-index kako bi se navbar uvijek prikazivao iznad drugih elemenata */
+}
+
+nav:hover {
+  background-color: #34495e; /* Lagana promjena boje pozadine na hover */
+}
+
+nav .logo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav .logo a:hover {
+  color: #1abc9c; /* Zelena boja za modernu svježinu pri hoveru */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+nav ul li:last-child {
+  margin-left: 50px;
+}
+
+nav ul li a {
+  color: #ecf0f1; /* Lagana siva boja teksta */
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #ffffff; /* Čista bijela na hover */
+  background-color: #1abc9c; /* Zelena pozadina na hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Blagi sjeni efekt pri hoveru */
+}
+#languageSelect {
+  background-color: #266697;
+  color: antiquewhite;
+  padding: 5px;
+}
+.call {
+  color: #1abc9c; /* Svježa zelena boja za dugme */
+  border: 2px solid #1abc9c;
+  padding: 8px 20px;
+  border-radius: 30px; /* Oblikovanje gumba s većim zaobljenjem */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.call:hover {
+  background-color: #1abc9c; /* Zelena pozadina pri hoveru */
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Dodan efekt sjene za gumb */
+}
+
+.hamburger {
+  display: none;
+  font-size: 34px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+  transform: rotate(90deg); /* Moderan efekt rotacije hamburger ikone */
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px; /* Širi meni za ugodniji izgled */
+  height: 100%;
+  background-color: rgba(
+    44,
+    62,
+    80,
+    0.95
+  ); /* Tamna pozadina s blagom prozirnošću */
+  color: white;
+  padding: 30px 20px;
+  z-index: 1000;
+  transition: transform 0.4s ease;
+  transform: translateX(100%); /* Izvan vidnog polja */
+}
+
+.mobile-menu.open {
+  transform: translateX(0); /* Pojava menija */
+}
+
+.close-btn {
+  text-align: right;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #1abc9c; /* Promjena boje X gumba pri hoveru */
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding-top: 50px;
+}
+
+.mobile-menu ul li {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.mobile-menu ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 50px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.mobile-menu ul li a:hover {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+#languageSelectMobile {
+  background-color: #266697;
+  color: antiquewhite;
+  padding: 5px;
+}
+
+/* ============ Hero Section =================== */
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 70vh;
+  background-color: #47596b; /* Solid tamnoplava boja */
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png'),
+    /* Suptilni uzorak */ url('autoservisnovosel.jpg'); /* Slika u pozadini */
+  background-size: 150px, cover; /* Veličina uzorka i slike */
+  background-position: center, center; /* Centriraj uzorak i sliku */
+  background-blend-mode: overlay; /* Efekt slojevitosti uzorka i slike */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Blaga crna prozirnost preko cijelog hero sectiona */
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Blaga sjena za bolju čitljivost */
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  color: #ecf0f1;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #1abc9c;
+  text-transform: uppercase;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #16a085;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/* =============== About Us Section ============= */
+.about-us {
+  padding: 70px 20px;
+  padding-bottom: 0px;
+  background-color: #f9f9f9; /* Svjetlija pozadina za kontrast */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us h2 {
+  text-align: center;
+  font-size: 42px;
+  color: #2c3e50;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.about-us h2::after {
+  content: '';
+  width: 200px;
+  height: 4px;
+  background-color: #1abc9c; /* Zelena linija ispod naslova */
+  display: block;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row-reverse; /* Slika na desnoj strani */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%; /* Osigurava da slika bude potpuno responzivna */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Dodaje suptilnu sjenu za profesionalan izgled */
+}
+/* ================ Repair All Cars Section ========== */
+.repair-all-cars {
+  padding: 50px 20px;
+  background-color: #f8f9fa; /* Svijetla pozadina za bolju čitljivost */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.repair-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repair-text {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  text-align: left;
+}
+
+.repair-text h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Tamnoplavi tekst */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.repair-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555; /* Tamniji sivi tekst za bolju čitljivost */
+}
+
+.repair-image {
+  flex: 1;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.repair-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Suptilna sjena za elegantan izgled */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.repair-image img:hover {
+  transform: scale(1.05); /* Blago povećanje pri hoveru za dinamičnost */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Intenzivnija sjena pri hoveru */
+}
+/* ============== Services Section ============ */
+.services {
+  padding: 0px 20px;
+  background-color: #f9f9f9;
+}
+
+.services h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffffff; /* Bijela boja teksta za kontrast */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #065990, #6abec9); /* Moderni gradijent */
+  padding: 20px;
+  border-radius: 10px; /* Zaobljeni rubovi */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Suptilna sjena za isticanje */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacija na hover */
+}
+
+.services h2:hover {
+  transform: scale(1.05); /* Lagano povećanje teksta na hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Povećanje sjene na hover */
+}
+
+.services-grid {
+  display: flex; /* Koristi flexbox */
+  flex-wrap: wrap; /* Omogućava prelamanje elemenata u redove */
+  gap: 30px;
+  justify-content: center; /* Centriranje redova */
+}
+
+.service-item {
+  flex: 1 1 300px; /* Postavlja minimalnu širinu elemenata */
+  max-width: 400px; /* Osigurava maksimalnu širinu elementa */
+}
+
+.service-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.service-item img {
+  width: 100%;
+  height: 200px; /* Postavi željenu visinu */
+  object-fit: cover; /* Prilagođava sliku unutar zadanih dimenzija */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover img {
+  transform: scale(1.05);
+}
+
+.service-item h3 {
+  font-size: 24px;
+  color: #115cb8;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Omogućuje da sadržaj bude gore, a link dolje */
+  height: 100%; /* Osigurava da kućica zauzima punu visinu */
+}
+
+.service-item a {
+  margin-top: 10px;
+  color: #617de3;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  align-self: flex-end; /* Pozicionira link u donji desni kut */
+}
+
+.service-item a:hover {
+  color: #3dacb2;
+}
+/* =============Reviews Section = Recenzije ==============*/
+.reviews {
+  padding: 60px 20px 10px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 45px; /* Veliki, čitljiv font za privlačenje pažnje */
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Lagano povećana razmaknica između slova */
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #11d3ff,
+    #b81853
+  ); /* Atraktivan gradijent boja */
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  padding-bottom: 10px;
+  position: relative; /* Omogućava pozicioniranje pseudo-elementa */
+  z-index: 1;
+  transition: all 0.4s ease-in-out; /* Glatka animacija za sve promjene */
+}
+.reviews-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.review-item {
+  width: 100%;
+  max-width: 600px; /* Maksimalna širina za recenzije na većim ekranima */
+  background-color: #ffffff;
+  padding: 10px;
+  padding-left: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.review-item img {
+  /* Slika popunjava cijeli kontejner */
+  max-width: 100%; /* Sprječava prelazak slike izvan kontejnera */
+  height: auto; /* Zadržava omjer slike */
+  border-radius: 10px;
+  display: block; /* Osigurava da nema dodatnih margina */
+}
+/*  ============= Sekcija o zadovoljstvu klijenata =========== */
+/* Sekcija o zadovoljstvu klijenata */
+/* Sekcija o zadovoljstvu klijenata */
+.client-satisfaction {
+  padding: 30px 20px 30px 20px;
+  background-color: #f9f9f9; /* Osnovna lagana pozadina */
+  background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); /* Suptilni uzorak */
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Stilovi za tekst unutar sekcije */
+.client-satisfaction p {
+  font-size: 22px; /* Veći font za bolju čitljivost */
+  line-height: 1.6; /* Manji razmak između redaka za uniformni izgled */
+  color: #333; /* Tamno siva boja teksta */
+  max-width: 900px; /* Ograničena širina za bolju preglednost */
+  margin: 0 auto; /* Centriranje teksta */
+  padding: 30px 40px; /* Dodatni padding za prozračnost */
+  font-weight: 400; /* Regularni tekst */
+  background-color: #f0e5e536; /* Bijela pozadina */
+  border-radius: 10px; /* Zaobljeni rubovi za moderan dizajn */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Blaga sjena */
+  position: relative; /* Omogućuje precizno pozicioniranje navodnika */
+}
+
+/* Dekorativni navodnici */
+.client-satisfaction p::before,
+.client-satisfaction p::after {
+  font-size: 60px;
+  color: #065990;
+  position: absolute;
+  top: -10px; /* Pozicionira navodnike iznad teksta */
+}
+
+.client-satisfaction p::before {
+  content: '“';
+  left: 20px; /* Pozicionira otvarajući navodnik na početku */
+}
+
+.client-satisfaction p::after {
+  content: '”';
+  right: 20px; /* Pozicionira zatvarajući navodnik na kraju */
+}
+
+/*  ========== Kontakt Sekcija ========== */
+.contact {
+  padding: 0px 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.contact h2 {
+  font-size: 48px; /* Veliki, istaknuti naslov */
+  text-align: center;
+  color: #065990;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+  word-wrap: break-word; /* Omogućava da se tekst prelama u više redova na manjim ekranima */
+}
+
+.contact h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #94ccbd;
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+/* Kontakt Informacije */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Osigurava da padding ne prelazi granice */
+}
+
+.contact-info .info-item,
+.contact-info .map-item {
+  flex: 1 1 45%; /* Normalno ponašanje na većim ekranima */
+  background-color: #f4f4f4; /* Osnovna boja pozadine */
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Suptilan uzorak */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Blaga sjena */
+  box-sizing: border-box; /* Padding se uračunava u širinu elementa */
+  max-width: 100%; /* Ograničava širinu na 100% kako bi spriječilo širenje */
+}
+
+.contact-info h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #065990;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.contact-info p:first-of-type {
+  margin-top: 40px;
+}
+
+.contact-info p strong {
+  color: #065990; /* Prva boja za istaknute informacije */
+}
+
+.contact-info a {
+  color: #231b1b; /* Druga boja za linkove */
+  text-decoration: none;
+  font-weight: bold;
+  word-wrap: break-word; /* Omogućava prelamanje dugih linkova u više redova */
+}
+
+.contact-info a:hover {
+  text-decoration: underline; /* Podvlačenje na hover */
+}
+
+/* Google Mapa Styling */
+.map-item iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Radno vrijeme */
+.opening-hours {
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #fff;
+  background-image: url('https://www.transparenttextures.com/patterns/brick-wall.png'); /* Suptilan moderan uzorak "Brick Wall" */
+  border-radius: 10px;
+  box-shadow: 10 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.opening-hours h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #06263b;
+  font-weight: bold;
+}
+
+.opening-hours p {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.opening-hours p strong {
+  color: #064c7a; /* Istaknuto radno vrijeme */
+}
+
+/* Call to Action Buttons */
+.cta {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cta a {
+  display: inline-flex; /* Koristi inline-flex za bolju kontrolu nad položajem ikone i teksta */
+  align-items: center; /* Poravnava ikonu i tekst vertikalno */
+  padding: 15px 40px;
+  background-color: #065990;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta a:hover {
+  background-color: #4aae74;
+  transform: scale(1.05);
+}
+
+.cta i {
+  margin-right: 10px; /* Razmak između ikone i teksta */
+  color: #4aae74; /* Zelena boja ikone */
+  font-size: 20px; /* Veličina ikone */
+}
+/* ================ Footer ========= */
+.footer {
+  background-color: #263545; /* Tamnoplava pozadina */
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #94ccbd; /* Svijetlo zelena za naslove */
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #94ccbd; /* Zelena boja na hover */
+}
+
+.footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-info {
+  flex: 1 1 50%;
+  text-align: left;
+}
+.footer-info p {
+  line-height: 1.5;
+}
+.footer-social {
+  flex: 1 1 50%;
+  text-align: right;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+}
+@media (max-width: 1100px) {
+  body {
+    margin-top: 80px;
+  }
+  nav {
+    padding: 20px;
+  }
+  nav ul {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  /* ==== Hero Section ======= */
+  .hero {
+    height: 55vh;
+  }
+  .hero h1 {
+    font-size: 25px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .cta-btn {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+  /* ======= About us ========= */
+  .about-content {
+    flex-direction: column; /* Na manjim ekranima tekst i slika idu jedan ispod drugog */
+    text-align: center;
+  }
+
+  .about-text,
+  .about-image {
+    max-width: 100%; /* Povećaj širinu na 100% za oba elementa */
+    padding: 10px;
+  }
+
+  .about-text p {
+    font-size: 16px; /* Manji font na manjim uređajima za bolju čitljivost */
+  }
+  /* ======= Repair All Cars Section ===== */
+  .repair-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .repair-text {
+    text-align: center; /* Centriranje teksta na manjim ekranima */
+    padding: 0 20px;
+  }
+
+  .repair-text h2 {
+    font-size: 28px;
+  }
+
+  .repair-text p {
+    font-size: 16px;
+  }
+
+  .repair-image {
+    margin-top: 10px;
+  }
+  /* ============== Services Section ============ */
+  .services h2 {
+    font-size: 36px;
+  }
+  .service-item h3 {
+    font-size: 20px;
+  }
+  .service-item p {
+    font-size: 14px;
+  }
+  /* Recenzije = Reviews Section */
+  .reviews h2 {
+    font-size: 28px;
+  }
+
+  .review-item {
+    padding-left: 2px;
+  }
+  /* ======= Recenzije odgovor ====== */
+  .client-satisfaction p {
+    font-size: 17px;
+  }
+  /* Kontakt sekcija */
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .contact-info .info-item,
+  .contact-info .map-item {
+    flex: 1 1 100%;
+  }
+
+  .contact h2 {
+    font-size: 28px;
+  }
+
+  .cta a {
+    font-size: 16px;
+  }
+  /*======== Footer ========*/
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info,
+  .footer-social {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us h2 {
+    font-size: 32px; /* Smanjuje veličinu naslova za manje ekrane */
+  }
+
+  .about-text p {
+    font-size: 14px; /* Još manji font za mobilne uređaje */
+  }
+
+  .about-image img {
+    width: 80%; /* Smanji sliku na manjim ekranima */
+  }
+}
+
+@media (min-width: 1101px) {
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  nav .logo a {
+    font-size: 25px;
+  }
+  .contact-info a {
+    font-size: 15px;
+  }
+}
+@media (max-width: 670px) {
+  .service-item {
+    max-width: 100%; /* Osigurava maksimalnu širinu elementa */
+  }
+}
+@media (max-width: 403px) {
+  .contact-info a {
+    font-size: 13px;
+  }
+  .contact-info p strong {
+    font-size: 17px;
+  }
+  .opening-hours p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 380px) {
+  nav .logo a {
+    font-size: 20px;
+  }
+  .contact-info a {
+    font-size: 12px;
+  }
+  .contact-info p strong {
+    font-size: 15px;
+  }
+}

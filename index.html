@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="hr" id="html-lang">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <title>Auto Servis Novosel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body onload="setLanguageBasedOnCountry()">
+    <nav>
+      <div class="logo">
+        <a href="#">Auto Servis Novosel</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" data-hr="O nama" data-en="About Us">O nama</a></li>
+        <li>
+          <a href="#services" data-hr="Usluge" data-en="Services">Usluge</a>
+        </li>
+        <li>
+          <a href="#reviews" data-hr="Recenzije" data-en="Reviews">Recenzije</a>
+        </li>
+        <li>
+          <a href="#contact" data-hr="Kontakt" data-en="Contact">Kontakt</a>
+        </li>
+        <li>
+          <a
+            href="tel:+385915275001"
+            class="call"
+            data-hr="Nazovi nas"
+            data-en="Call Us"
+          >
+            Nazovi nas</a
+          >
+        </li>
+        <li>
+          <select id="languageSelect" onchange="changeLanguage()">
+            <option value="hr">HR</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+      <div class="hamburger" id="hamburgerIcon">&#9776;</div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="closeMenu()">X</div>
+      <ul>
+        <li><a href="#about" data-hr="O nama" data-en="About Us">O nama</a></li>
+        <li>
+          <a href="#services" data-hr="Usluge" data-en="Services">Usluge</a>
+        </li>
+        <li>
+          <a href="#reviews" data-hr="Recenzije" data-en="Reviews">Recenzije</a>
+        </li>
+        <li>
+          <a href="#contact" data-hr="Kontakt" data-en="Contact">Kontakt</a>
+        </li>
+        <li>
+          <a
+            href="tel:+385953755057"
+            class="call"
+            data-hr="Nazovi nas"
+            data-en="Call Us"
+            >Nazovi nas</a
+          >
+        </li>
+        <li>
+          <select id="languageSelectMobile" onchange="changeLanguage()">
+            <option value="hr">HR</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+    <section class="hero">
+      <div class="hero-content">
+        <h1
+          data-hr="Dobrodošli u Auto Servis Novosel"
+          data-en="Welcome to Auto Service Novosel"
+        >
+          Dobrodošli u Auto Servis Novosel
+        </h1>
+        <p
+          data-hr="Vrhunske usluge održavanja i popravka automobila."
+          data-en="Top-notch car maintenance and repair services."
+        >
+          Vrhunske usluge održavanja i popravka automobila.
+        </p>
+        <a
+          href="#usluge"
+          class="cta-btn"
+          data-hr="Saznaj Više"
+          data-en="Learn More"
+          >Saznaj Više</a
+        >
+      </div>
+    </section>
+    <section class="about-us" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 data-hr="O nama" data-en="About Us">O nama</h2>
+            <p
+              data-hr="Auto Servis Novosel, smješten u Novom Zagrebu na adresi Gata 1a, pruža profesionalne usluge održavanja i popravka motornih vozila. Naš iskusni tim specijaliziran je za automehaniku, autoelektriku, autodijagnostiku, servis klima uređaja, te zamjenu i podešavanje guma. Radimo na svim vrstama automobila, osiguravajući vrhunsku uslugu i brzu reakciju za lokalne i šire korisnike grada Zagreba. Kvaliteta i povjerenje su temelj našeg poslovanja."
+              data-en="Auto Service Novosel, located in Novi Zagreb at Gata 1a, provides professional maintenance and repair services for motor vehicles. Our experienced team specializes in auto mechanics, auto electrics, car diagnostics, air conditioning service, and tire replacement and adjustment. We work on all types of cars, ensuring top-notch service and fast response for local and wider users of the city of Zagreb. Quality and trust are the foundation of our business."
+            >
+              Auto Servis Novosel, smješten u Novom Zagrebu na adresi Gata 1a,
+              pruža profesionalne usluge održavanja i popravka motornih
+              vozila...
+            </p>
+            <p
+              data-hr="S našim stručnim pristupom, Vaše vozilo je u sigurnim rukama."
+              data-en="With our expert approach, your vehicle is in safe hands."
+            >
+              S našim stručnim pristupom, Vaše vozilo je u sigurnim rukama.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="pexels-artempodrez-8986132.jpg"
+              alt="Auto Servis Novosel"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="repair-all-cars">
+      <div class="container">
+        <div class="repair-content">
+          <div class="repair-text">
+            <h2
+              data-hr="Popravljamo Sve Vrste Automobila"
+              data-en="We Repair All Types of Cars"
+            >
+              Popravljamo Sve Vrste Automobila
+            </h2>
+            <p
+              data-hr="Bilo da vozite mali gradski automobil, terenac ili luksuzni sportski automobil, naš stručni tim je tu za vas. Garantiramo vrhunsku uslugu bez obzira na marku ili model vozila."
+              data-en="Whether you drive a small city car, an SUV, or a luxury sports car, our expert team is here for you. We guarantee top service regardless of the make or model."
+            >
+              Bilo da vozite mali gradski automobil, terenac ili luksuzni
+              sportski automobil, naš stručni tim je tu za vas. Garantiramo
+              vrhunsku uslugu bez obzira na marku ili model vozila.
+            </p>
+          </div>
+          <div class="repair-image">
+            <img
+              src="brendovi automobila.jpg.png"
+              alt="Popravljamo sve vrste automobila"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="services" id="services">
+      <div class="container">
+        <h2 data-hr="Naše Usluge" data-en="Our Services">Naše Usluge</h2>
+        <div class="services-grid">
+          <!-- 1. Redovno Održavanje -->
+          <div class="service-item">
+            <img
+              src="redovno održavanje auta.jpg"
+              alt="Redovno održavanje automobila"
+            />
+            <h3 data-hr="Redovno Održavanje" data-en="Regular Maintenance">
+              Redovno Održavanje
+            </h3>
+            <p
+              data-hr="Zamjena ulja, filtera, svjećica, balansiranje guma."
+              data-en="Oil change, filter replacement, spark plug replacement, tire balancing."
+            >
+              Zamjena ulja, filtera, svjećica, balansiranje guma.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 2. Servis Kočnica -->
+          <div class="service-item">
+            <img src="servis kočnica.jpg" alt="Servis kočnica" />
+            <h3 data-hr="Servis Kočnica" data-en="Brake Service">
+              Servis Kočnica
+            </h3>
+            <p
+              data-hr="Zamjena kočionih pločica, diskova, popravak kočionih čeljusti."
+              data-en="Brake pad and disc replacement, caliper repair."
+            >
+              Zamjena kočionih pločica, diskova, popravak kočionih čeljusti.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 3. Mehanički Popravci -->
+          <div class="service-item">
+            <img
+              src="mehanički popravci.jpg"
+              alt="Mehanički popravci automobila"
+            />
+            <h3 data-hr="Mehanički Popravci" data-en="Mechanical Repairs">
+              Mehanički Popravci
+            </h3>
+            <p
+              data-hr="Popravak motora, servis mjenjača, zamjena amortizera."
+              data-en="Engine repairs, clutch and gearbox service, shock absorber replacement."
+            >
+              Popravak motora, servis mjenjača, zamjena amortizera.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 4. Autoelektričarske Usluge -->
+          <div class="service-item">
+            <img
+              src="autoelektričarske usluge.jpg"
+              alt="Autoelektričarske usluge"
+            />
+            <h3
+              data-hr="Autoelektričarske Usluge"
+              data-en="Auto Electric Services"
+            >
+              Autoelektričarske Usluge
+            </h3>
+            <p
+              data-hr="Popravak električnih instalacija, alternatora, startera."
+              data-en="Electrical repair, alternator and starter service."
+            >
+              Popravak električnih instalacija, alternatora, startera.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 5. Dijagnostika Vozila -->
+          <div class="service-item">
+            <img src="dijagnostika vozila.jpg" alt="Dijagnostika vozila" />
+            <h3 data-hr="Dijagnostika Vozila" data-en="Vehicle Diagnostics">
+              Dijagnostika Vozila
+            </h3>
+            <p
+              data-hr="Računalna dijagnostika motora, provjera senzora."
+              data-en="Engine diagnostics, sensor checks."
+            >
+              Računalna dijagnostika motora, provjera senzora.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 6. Servis Klima Uređaja -->
+          <div class="service-item">
+            <img src="servis klima uređaja.webp" alt="Servis klima uređaja" />
+            <h3
+              data-hr="Servis Klima Uređaja"
+              data-en="Air Conditioning Service"
+            >
+              Servis Klima Uređaja
+            </h3>
+            <p
+              data-hr="Punjenje, provjera i zamjena dijelova klima sustava."
+              data-en="AC refills, component checks and replacements."
+            >
+              Punjenje, provjera i zamjena dijelova klima sustava.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 7. Servis Ovjesa i Upravljanja -->
+          <div class="service-item">
+            <img
+              src="servis ovjesa i upravljanja.webp"
+              alt="Servis ovjesa i upravljanja"
+            />
+            <h3
+              data-hr="Servis Ovjesa i Upravljanja"
+              data-en="Suspension & Steering Service"
+            >
+              Servis Ovjesa i Upravljanja
+            </h3>
+            <p
+              data-hr="Zamjena amortizera, geometrija kotača, popravci upravljača."
+              data-en="Shock absorber replacement, wheel alignment, steering repairs."
+            >
+              Zamjena amortizera, geometrija kotača, popravci upravljača.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 8. Ispušni Sustav -->
+          <div class="service-item">
+            <img src="ispušni sustav.jpg" alt="Ispušni sustav" />
+            <h3 data-hr="Ispušni Sustav" data-en="Exhaust System">
+              Ispušni Sustav
+            </h3>
+            <p
+              data-hr="Zamjena ispušnih cijevi, katalizatora, prigušivača."
+              data-en="Exhaust pipe replacement, catalytic converter, muffler repair."
+            >
+              Zamjena ispušnih cijevi, katalizatora, prigušivača.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 9. Vulkanizacija -->
+          <div class="service-item">
+            <img src="vulkanizacija.jpeg" alt="Vulkanizacija" />
+            <h3 data-hr="Vulkanizacija" data-en="Tire Service">
+              Vulkanizacija
+            </h3>
+            <p
+              data-hr="Zamjena, balansiranje, popravak probušenih guma."
+              data-en="Tire replacement, balancing, puncture repair."
+            >
+              Zamjena, balansiranje, popravak probušenih guma.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 10. Servis Svjetala i Vidljivosti -->
+          <div class="service-item">
+            <img
+              src="servis svjetala i vidljivosti.jpg"
+              alt="Servis svjetala i vidljivosti"
+            />
+            <h3
+              data-hr="Servis Svjetala i Vidljivosti"
+              data-en="Lighting & Visibility Service"
+            >
+              Servis Svjetala i Vidljivosti
+            </h3>
+            <p
+              data-hr="Zamjena farova, brisača i osvjetljenja unutar vozila."
+              data-en="Headlight, windshield wiper replacement, interior lighting repair."
+            >
+              Zamjena farova, brisača i osvjetljenja unutar vozila.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+
+          <!-- 11. Ostale Usluge -->
+          <div class="service-item">
+            <img src="ostale usluge.webp" alt="Ostale usluge" />
+            <h3 data-hr="Ostale Usluge" data-en="Other Services">
+              Ostale Usluge
+            </h3>
+            <p
+              data-hr="Zamjena stakala, priprema vozila za tehnički pregled."
+              data-en="Windshield replacement, vehicle inspection preparation."
+            >
+              Zamjena stakala, priprema vozila za tehnički pregled.
+            </p>
+            <a
+              href="#"
+              class="service-link"
+              data-hr="Saznaj Više"
+              data-en="Learn More"
+              >Saznaj Više</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <h2 data-hr="Što Kažu Naši Klijenti" data-en="What Our Clients Say">
+          Što Kažu Naši Klijenti
+        </h2>
+        <div class="reviews-grid">
+          <div class="review-item">
+            <img
+              src="recenzije najbolji automehaničar u zagrebu.png"
+              alt="Najbolji auto servis u Zagrebu - Recenzija klijenta 1 na Google Maps"
+              data-en="Best car service in Zagreb - Client review 1 on Google Maps"
+            />
+          </div>
+          <div class="review-item">
+            <img
+              src="recenzije 2.png"
+              alt="Pouzdani mehaničari u Zagrebu - Recenzija klijenta 2 na Google Maps"
+              data-en="Reliable mechanics in Zagreb - Client review 2 on Google Maps"
+            />
+          </div>
+          <div class="review-item">
+            <img
+              src="recenzije 3.png"
+              alt="Servis automobila u Novom Zagrebu - Recenzija klijenta 3 na Google Maps"
+              data-en="Car service in Novi Zagreb - Client review 3 on Google Maps"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Zadovoljni smo zbog pozitivnih komentara naših klijenata-->
+    <section class="client-satisfaction">
+      <div class="container">
+        <p>
+          Svaki pozitivan komentar i recenzija dodatna su potvrda da radimo
+          nešto ispravno. Nema veće sreće u poslu od znanja da smo pomogli i
+          olakšali život našim klijentima. Njihovo zadovoljstvo naš je najveći
+          uspjeh.
+        </p>
+      </div>
+      <!-- Kontakt section -->
+    </section>
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 data-hr="Kontaktirajte Nas" data-en="Contact Us">
+          Kontaktirajte Nas
+        </h2>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta">
+        <a href="tel:+385953755057" class="cta-call">
+          <i class="fas fa-phone-alt"></i>
+          <span data-hr="Nazovite odmah" data-en="Call Now"
+            >Nazovite odmah</span
+          >
+        </a>
+      </div>
+
+      <!-- Radno vrijeme -->
+      <div class="opening-hours">
+        <h3 data-hr="Radno Vrijeme" data-en="Working Hours">Radno Vrijeme</h3>
+        <p>
+          <strong data-hr="Ponedjeljak - Petak:" data-en="Monday - Friday:"
+            >Ponedjeljak - Petak:</strong
+          >
+          08:00 - 18:00
+        </p>
+        <p>
+          <strong data-hr="Subota:" data-en="Saturday:">Subota:</strong> 08:00 -
+          14:00
+        </p>
+        <p>
+          <strong data-hr="Nedjelja:" data-en="Sunday:">Nedjelja:</strong>
+          Zatvoreno
+        </p>
+      </div>
+
+      <!-- Kontakt informacije -->
+      <div class="contact-info">
+        <div class="info-item">
+          <h3 data-hr="Kontakt Informacije" data-en="Contact Information">
+            Kontakt Informacije
+          </h3>
+          <p>
+            <strong data-hr="Telefon:" data-en="Phone:">Telefon:</strong>
+            <a href="tel:+385953755057">+385 91 527 5001</a>
+          </p>
+          <p>
+            <strong data-hr="Email:" data-en="Email:">Email:</strong>
+            <a href="mailto:webdevcodeblue@gmail.com"
+              >autoservisnovosel@gmail.com</a
+            >
+          </p>
+          <p>
+            <strong data-hr="Adresa:" data-en="Address:">Adresa:</strong> Gata
+            1a, Novi Zagreb
+          </p>
+        </div>
+
+        <!-- Google Mapa -->
+        <div class="map-item">
+          <h3 data-hr="Lokacija" data-en="Location">Lokacija</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.473905453617!2d15.981918315755175!3d45.755539379105264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d50983b4e3e3%3A0x1a79b7a9b7d92af3!2sGata%201a%2C%2010000%2C%20Zagreb!5e0!3m2!1sen!2shr!4v1645787777777!5m2!1sen!2shr"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3 data-hr="Auto Servis Novosel" data-en="Auto Service Novosel">
+              Auto Servis Novosel
+            </h3>
+            <p data-hr="Gata 1a, Novi Zagreb" data-en="Gata 1a, New Zagreb">
+              Gata 1a, Novi Zagreb
+            </p>
+            <p>
+              <strong data-hr="Telefon:" data-en="Phone:">Telefon:</strong>
+              <a
+                href="tel:+385953755057"
+                data-hr="+385 91 527 5001"
+                data-en="+385 91 527 5001"
+                >+385 91 527 5001</a
+              >
+            </p>
+            <p>
+              <strong data-hr="Email:" data-en="Email:">Email:</strong>
+              <a
+                href="mailto:autoservisnovosel@gmail.com"
+                data-hr="autoservisnovosel@gmail.com"
+                data-en="autoservisnovosel@gmail.com"
+                >autoservisnovosel@gmail.com</a
+              >
+            </p>
+          </div>
+          <div class="footer-social">
+            <h3 data-hr="Pratite nas" data-en="Follow us">Pratite nas</h3>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p
+            data-hr="&copy; 2024 Auto Servis Novosel. Sva prava pridržana."
+            data-en="&copy; 2024 Auto Service Novosel. All rights reserved."
+          >
+            &copy; 2024 Auto Servis Novosel. Sva prava pridržana.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
